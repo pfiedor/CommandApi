@@ -1,11 +1,13 @@
 using CommandApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<ICommandApiRepo, SqlCommandApiRepo>();
 
 var cs = new NpgsqlConnectionStringBuilder
