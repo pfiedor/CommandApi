@@ -16,7 +16,7 @@ public class CommandTests : IDisposable
 
     public void Dispose()
     {
-        testCommand = null;
+        testCommand = null!;
     }
     
     [Fact]
